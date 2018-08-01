@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+  <link rel="stylesheet" href="styles/global.css">
+</head>
+
+<body ng-app="ToDoList">
+  <div ng-controller="MainController">
+    <div ng-repeat="item in list  track by $index">
+      <li ng-click=clearItem(item)>{{ item }}</li>
+    </div>
+    <input ng-model="addToDo">
+  <div class="spaced">
+    <button class="button" type="button" ng-click="addItem()">Clicky</button>
+  </div>
+  <table  style="width:100%">
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Age</th>
+      </tr>
+    <div>
+      <tr ng-repeat="user in users | filter:user">
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.age}}</td>
+      </tr>
+    </div>
+  </table>
+
+  </div> <!-- Notice how the div encloses the main controller space -->
+  <!-- Modules -->
+  <script type="text/javascript" src="js/app.js"></script>
+  <!-- Controllers -->
+  <script src="js/controllers/MainController.js"></script>
+  <!-- Services -->
+  <script src="js/services/mock-services.js"></script>
+</body>
+
+</html>
